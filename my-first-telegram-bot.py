@@ -26,7 +26,7 @@ def weather(update: Update, context: CallbackContext):
     hour_of_day = datetime.datetime.now().hour
     time_of_day=['Morgen', 'Mittag', 'Nachmittags', 'Abend']
     try:
-        data = weather_call.weather_warrior(City=context.args[0])
+        data = weather_call.weather_warrior(city=context.args[0])
         temp, weather = data[0], data[1]
 
         message = f"Willkommen! Die momentane Temperatur beträgt {str(temp)}° Celsius."
@@ -38,7 +38,7 @@ def weather(update: Update, context: CallbackContext):
             message += " " + "Ziehen Sie sich lieber etwas wärmer an."
         elif temp <= 5:
             message += " " + "Ziehen Sie sich lieber einen Schal und Handschuhe an."
-        message += " " + f"Das Wetter ist des Weiteren {str(weather)}. Bitte berücksichtigen Sie dies."
+        message += " " + f"Das Wetter ist des Weiteren \"{str(weather)}\". Bitte berücksichtigen Sie dies."
     
     except:
         if len(context.args) > 0:

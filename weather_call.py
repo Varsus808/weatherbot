@@ -10,8 +10,8 @@ with open(path_to_openweather_cred, 'r') as f:
         else:
             openweather_api_key = line
 
-def weather_warrior():
-	api_call=f'https://api.openweathermap.org/data/2.5/weather?q={City}&appid={openweather_api_key}&units=metric&lang=de'
+def weather_warrior(city='london'):
+	api_call=f'https://api.openweathermap.org/data/2.5/weather?q={city}&appid={openweather_api_key}&units=metric&lang=de'
 	data = requests.get(api_call).json()
 	print(data)
 	return data['main']['temp'], data['weather'][0]['description']
