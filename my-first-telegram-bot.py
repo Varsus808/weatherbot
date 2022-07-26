@@ -5,10 +5,11 @@ import logging
 import datetime
 import weather_call
 
+import pathlib
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
-
-with open('/home/micha/weatherbot/telegram_credentials.txt', 'r') as f:
+path_to_telegram_cred =str(pathlib.Path().resolve())+'telegram_credentials.txt'
+with open(path_to_telegram_cred, 'r') as f:
     for line in f:
         if line[-1] == '\n':
             telegram_api_key = line[:-1]
