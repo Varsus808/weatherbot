@@ -8,7 +8,7 @@ import weather_call
 import pathlib
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
-path_to_telegram_cred =str(pathlib.Path().resolve())+'telegram_credentials.txt'
+path_to_telegram_cred =str(pathlib.Path().resolve())+'/telegram_credentials.txt'
 with open(path_to_telegram_cred, 'r') as f:
     for line in f:
         if line[-1] == '\n':

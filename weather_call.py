@@ -1,6 +1,8 @@
 import requests
+import pathlib
 
-path_to_openweather_cred =str(pathlib.Path().resolve())+'openweather_credentials.txt'
+path_to_openweather_cred =str(pathlib.Path().resolve())+'/openweather_credentials.txt'
+
 with open(path_to_openweather_cred, 'r') as f:
     for line in f:
         if line[-1] == '\n':
